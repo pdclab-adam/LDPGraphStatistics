@@ -1,0 +1,6 @@
+[submodule "cpp/stats"]
+	path = cpp/stats
+	url = https://github.com/kthohr/stats
+[submodule "cpp/gcem"]
+	path = cpp/gcem
+	url = https://github.com/kthohr/gcem
