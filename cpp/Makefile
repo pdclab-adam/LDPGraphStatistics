@@ -1,6 +1,6 @@
 CXXFLAGS	= -march=native -O3
 CXXFLAGS	+= -std=c++11
-CXXFLAGS	+= -isystem ./include
+CXXFLAGS	+= -isystem ./stats/include
 CXXFLAGS	+= -MMD
 CC	= g++
 
