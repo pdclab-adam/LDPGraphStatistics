@@ -8,5 +8,5 @@ fi
 cd cpp/
 ./EvalLossLocal ../data/${1}/edges.csv 10000 1 1 10 0
 ./EvalLossLocal ../data/${1}/edges.csv 10000 1 1 10 1
-./EvalLossLocal ../data/${1}/edges.csv 10000 1 1 10 3
+# ** This call does not terminate ** ./EvalLossLocal ../data/${1}/edges.csv 10000 1 1 10 3
 cd ../
