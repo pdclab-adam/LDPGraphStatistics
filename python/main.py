@@ -3,24 +3,20 @@ import sys
 import os
 from read_orkut import read_orkut
 from ba_graph import ba_graph
+from common import *
 
 if __name__ == "__main__":
+    log("Running ldp statistics")
 
-    ################################# Parameters ##################################
-    if len(sys.argv) < 4:
-        print(
-            "Usage:", sys.argv[0], "[OrkutFile (in)] [EdgeFile (out)] [DegFile (out)]"
-        )
-        sys.exit(0)
+    args = parse_args()
+    input_file: str = args.input_file
+    output_file: str = args.output_file
+    epsilon: float = args.epsilon
+    delta: float = args.delta
+    replications: int = args.replications
+    disable: bool = args.disable
 
-    # Orkut File (input)
-    orkut_file = sys.argv[1]
-    # Edge File (output)
-    edge_file = sys.argv[2]
-    # Degree File (output)
-    degree_file = sys.argv[3]
-
-    read_orkut(orkut_file, "../data/Orkut/edges.csv", "../data/Orkut/deg.csv")
+    read_orkut(input_file, "../data/Orkut/edges.csv", "../data/Orkut/deg.csv")
     ba_graph(
         1000000, 10, "../data/BAGraph-m10/edges.csv", "../data/BAGraph-m10/deg.csv"
     )
