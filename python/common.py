@@ -51,33 +51,30 @@ def parse_args() -> argparse.Namespace:
         prog="Experiment Parser",
         description="Run a differentially private algorithm on a graph",
     )
-    require_epsilon = True
-    require_delta = True
-
     parser.add_argument(
-        "-in", "--input-file", required=True, help="Where is the input file"
+        "-in", "--input-file", required=True, help="The input file path"
     )
     parser.add_argument(
-        "-out", "--output-file", required=True, help="Where to put the output file"
+        "-out", "--output-file", required=True, help="The output file path"
     )
     parser.add_argument(
-        "-e",
-        "--epsilon",
-        required=require_epsilon,
-        help="What is the epsilon privacy budget",
+        "-e", "--epsilon", required=True, help="The epsilon privacy budget"
     )
     parser.add_argument(
-        "-d", "--delta", required=require_delta, help="What is the delta privacy budget"
+        "-d", "--delta", required=False, help="The delta privacy budget"
     )
     parser.add_argument(
         "-r",
         "--replications",
         required=False,
         default=1,
-        help="How many times do I replicate this experiment",
+        help="Number of times replicate this experiment",
     )
     parser.add_argument(
-        "--disable", required=False, default=False, help="Disable this run if True"
+        "--disable",
+        required=False,
+        default=False,
+        help="Disables the computation of results",
     )
 
     log("Read arguments")
